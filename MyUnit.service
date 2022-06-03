@@ -1,0 +1,14 @@
+[Unit]
+Description=MyUnit
+StartLimitIntervalSec=1
+StartLimitBurst=2
+
+[Service]
+Type=simple
+User=user
+Group=user
+ExecStart=java -jar app.jar some_out_file "Service is working!"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
